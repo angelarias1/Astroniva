@@ -1,0 +1,124 @@
+.planets-section {
+  padding: 4rem 2rem;
+  background-color: #0f1527;
+  background: url('/path-to-stars-background.jpg') center/cover fixed;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.planets-section::before,
+.planets-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(3px, #ffffff, transparent 50%);
+  opacity: 0.4;
+  animation: animateStars 150s linear infinite;
+}
+
+.planets-section::before {
+  background-size: 50px 50px;
+}
+
+.planets-section::after {
+  background-size: 100px 100px;
+  animation-duration: 300s;
+}
+
+@keyframes animateStars {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, -100%, 0);
+  }
+}
+
+.planets-section h2 {
+  font-size: 2.5rem;
+  color: #00d1ff;
+  text-shadow: 0px 0px 10px rgba(0, 209, 255, 0.8);
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.planets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.planet-card {
+  background: linear-gradient(145deg, #1a2737, #0d1b29);
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #e0e0e0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.planet-card:hover {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 6px 15px rgba(0, 209, 255, 0.3);
+  background: #102533;
+}
+
+.planet-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+
+.planet-card:hover .planet-icon {
+  transform: scale(1.2);
+}
+
+.planet-card h3 {
+  color: #00d1ff;
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+  text-shadow: 0 0 8px rgba(0, 209, 255, 0.8);
+}
+
+.planet-card p {
+  font-size: 1rem;
+  color: #c0c0c0;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.planet-card:first-child::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: rgba(255, 223, 0, 0.8);
+  box-shadow: 0px 0px 15px rgba(255, 223, 0, 0.8);
+  animation: solarPulse 2s infinite ease-in-out;
+}
+
+@keyframes solarPulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}

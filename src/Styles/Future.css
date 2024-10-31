@@ -1,0 +1,28 @@
+.future-section {
+    padding: 3rem;
+    background-color: var(--secondary-bg);
+  }
+  
+  .future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .future-card {
+    background-color: var(--primary-bg);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .future-card:hover {
+    transform: scale(1.05);
+    background-color: var(--hover-bg);
+  }
+  
+  .future-card h3 {
+    color: var(--accent-color);
+  }
+  

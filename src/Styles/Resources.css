@@ -1,0 +1,27 @@
+.resources-section {
+    padding: 3rem;
+    background-color: var(--primary-bg);
+  }
+  
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .resource-card {
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .resource-card:hover {
+    transform: scale(1.05);
+    background-color: var(--hover-bg);
+  }
+  
+  .resource-card h3 {
+    color: var(--accent-color);
+  }
+  

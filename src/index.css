@@ -1,0 +1,139 @@
+/* Estilos Generales */
+:root {
+  --primary-bg: #0a0e1a;
+  --secondary-bg: #1b2735;
+  --text-color: #ffffff;
+  --accent-color: #00d1ff;
+  --button-bg: #14213d;
+  --hover-bg: #3a506b;
+  --border-color: #1f4068;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, p {
+  text-align: center;
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+/* Enlaces */
+a {
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Encabezados */
+h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(255, 87, 34, 0.8);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #d1d1d1;
+}
+
+/* Botones */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+  border-color: var(--hover-bg);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Efectos de Transición */
+h1, h2, p, a, button {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad */
+@media (prefers-color-scheme: light) {
+  :root {
+      color: #213547;
+      background-color: #ffffff;
+  }
+
+  a:hover {
+      color: var(--hover-bg);
+  }
+
+  button {
+      background-color: #213547;
+      color: #ffffff;
+  }
+
+  button:hover {
+      background-color: #f0f0f0;
+      color: #000000;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}

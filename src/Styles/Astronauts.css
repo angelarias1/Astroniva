@@ -1,0 +1,114 @@
+.astronauts-section {
+  padding: 3rem;
+  background-color: #0f1527;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.astronauts-section::before,
+.astronauts-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(3px, #ffffff, transparent 50%);
+  opacity: 0.5;
+  animation: animateStars 100s linear infinite;
+}
+
+.astronauts-section::before {
+  background-size: 50px 50px;
+}
+
+.astronauts-section::after {
+  background-size: 100px 100px;
+  animation-duration: 200s;
+}
+
+@keyframes animateStars {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, -100%, 0);
+  }
+}
+
+.astronauts-section h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 15px rgba(0, 209, 255, 0.8);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.astronauts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.astronaut-card {
+  background-color: var(--secondary-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px rgba(4, 171, 209, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.astronaut-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0px 0px 30px rgba(0, 208, 255, 0.556);
+  background-color: #102f4a;
+}
+
+.astronaut-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s;
+  box-shadow: 0px 0px 15px rgba(0, 209, 255, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.astronaut-card img:hover {
+  box-shadow: 0px 0px 25px rgb(0, 208, 255);
+}
+
+.astronaut-card h3 {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  text-shadow: 0px 0px 10px rgba(0, 209, 255, 0.8);
+  position: relative;
+  z-index: 1;
+}
+
+.achievement {
+  font-size: 1rem;
+  color: #00d1ff;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #d1d1d1;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
+}

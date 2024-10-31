@@ -1,0 +1,118 @@
+.missions-section {
+  padding: 3rem;
+  background-color: #0f1527;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.missions-section::before,
+.missions-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(3px, #ffffff, transparent 50%);
+  opacity: 0.5;
+  animation: animateStars 100s linear infinite;
+}
+
+.missions-section::before {
+  background-size: 50px 50px;
+}
+
+.missions-section::after {
+  background-size: 100px 100px;
+  animation-duration: 200s;
+}
+
+@keyframes animateStars {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, -100%, 0);
+  }
+}
+
+.missions-section h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 15px rgba(0, 209, 255, 0.8);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.mission-card {
+  background-color: var(--primary-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 209, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: var(--text-color);
+  text-align: center;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 209, 255, 0.3);
+  background-color: #1a2737;
+}
+
+.mission-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.mission-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mission-info h3 {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0px 0px 10px rgba(0, 209, 255, 0.8);
+}
+
+.mission-info p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+.highlights {
+  margin-top: 0.5rem;
+  padding-left: 0;
+  list-style-type: '✨ ';
+  color: #c0c0c0;
+}
+
+.highlights li {
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  color: #b3e5fc;
+}
